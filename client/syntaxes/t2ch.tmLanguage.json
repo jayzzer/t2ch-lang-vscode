@@ -1,0 +1,75 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "T2CH",
+	"patterns": [
+		{
+			"include": "#contract"
+		},
+		{
+			"include": "#result"
+		},
+		{
+			"include": "#string"
+		}
+	],
+	"repository": {
+		"keyword": {
+			"name": "keyword.t2ch",
+			"match": "(КОНТРАКТ#|РЕЗУЛЬТАТ#)"
+		},
+		"contract": {
+			"name": "contract.t2ch",
+			"begin": "(?=КОНТРАКТ#)",
+			"end": "(?=РЕЗУЛЬТАТ#)",
+			"patterns": [
+				{ "include": "#variable-wrapper" },
+				{ "include": "#keyword" },
+				{ "include": "#string"}
+			]
+		},
+		"result": {
+			"name": "result.t2ch",
+			"begin": "(?=РЕЗУЛЬТАТ#)",
+			"end": "\\$",
+			"patterns": [
+				{ "include": "#keyword" },
+				{ "include": "#function" },
+				{ "include": "#variable" },
+				{ "include": "#string" }
+			]
+		},
+		"variable-wrapper": {
+			"name": "var.wrapper.t2ch",
+			"begin": "(?=_.{1,40}:)",
+			"end": ";",
+			"patterns": [
+				{ "include": "#variable" },
+				{ "include": "#variable-type" },
+				{ "include": "#variable-modificator" }
+			]
+		},
+		"variable": {
+			"name": "variable.t2ch",
+			"match": "_[a-zA-Zа-яА-Я0-9]*"
+		},
+		"variable-type": {
+			"name": "entity.name.type.t2ch",
+			"match": "[$](слово|время|число|буква|игрок)"
+		},
+		"variable-modificator": {
+			"name": "storage.modifier.t2ch",
+			"begin": "{",
+			"end": "}"
+		},
+		"function": {
+			"name": "entity.name.function.t2ch",
+			"match": "(?<=\\^)(ВЕС|АВТОР|УСЛ|ДЛИНА)"
+		},
+		"string": {
+			"name": "string.t2ch",
+			"begin": "\"",
+			"end": "\""
+		}
+	},
+	"scopeName": "source.t2ch"
+}

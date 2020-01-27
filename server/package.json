@@ -1,0 +1,14 @@
+{
+	"name": "t2ch-lang-server",
+	"description": "Example implementation of a language server in node.",
+	"version": "1.0.0",
+	"author": "jayzzer",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"dependencies": {
+		"vscode-languageserver": "^5.2.1"
+	},
+	"scripts": {}
+}
