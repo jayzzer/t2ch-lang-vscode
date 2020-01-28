@@ -2,7 +2,7 @@
     "name": "t2ch-lang",
     "displayName": "T2CH Lang",
     "description": "Extension for supporting T2CH language",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "engines": {
         "vscode": "^1.34.0"
     },
@@ -11,7 +11,8 @@
     ],
     "activationEvents": [
 		"onLanguage:t2ch"
-	],
+    ],
+    "icon": "client/icon.png",
     "main": "./client/extension.js",
     "publisher": "jayzzer",
     "repository": {
