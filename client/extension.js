@@ -109,7 +109,7 @@ function activate(context) {
                 
                 const linePrefix = document.getText(new vscode.Range(new vscode.Position(0, 0), position));
                 if (linePrefix.includes('РЕЗУЛЬТАТ#')) {
-                    completionList.push(scoreCompletion, authorCompletion, conditionCompletion);
+                    completionList.push(scoreCompletion, authorCompletion, conditionCompletion, lengthCompletion);
                 }
 
                 return completionList;

@@ -1,5 +1,9 @@
 # T2CH-Lang Change Log
 
+## [0.0.4] - 28.01.2020
+### Fixed
+- Fix snippet for function "^ДЛИНА"
+
 ## [0.0.3] - 27.01.2020
 ### Added
 - Add extension icon
